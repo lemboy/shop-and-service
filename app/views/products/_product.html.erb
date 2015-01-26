@@ -1,0 +1,22 @@
+<tr>
+  <td><%= product_glyph(product).html_safe %></td>
+  <td>
+  	<% if product.is_leaf %>
+  		<%= link_to product.name, product %>
+  	<% else %>
+  	  	<%= link_to product.name, products_path+"?grp_id=#{product.id}" %>
+	<% end %>
+  </td>
+  <td class="text-right" ><%= formatted_price product.purchase_price, product.is_leaf %></td>
+  <td class="text-right" ><%= formatted_price product.cash_price, product.is_leaf %></td>
+  <td class="text-right" ><%= formatted_price product.noncash_price, product.is_leaf %></td>
+  <td class="text-right" >
+  	<%= link_to edit_product_path(product) do %>
+    	<span class="glyphicon glyphicon-pencil"></span>
+	<% end %>
+	<%= link_to product, method: :delete, data: { confirm: "You sure?" } do %>
+    	<span class="glyphicon glyphicon-trash"></span>
+	<% end %>
+  </td>
+</tr>
+    

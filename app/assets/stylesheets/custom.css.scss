@@ -1,3 +1,4 @@
+@import "bootstrap-sprockets";
 @import "bootstrap";
 
 /* mixins, variables, etc. */
@@ -81,7 +82,7 @@ p {
   }
 }
 
-.navbar {
+.navbar-left {
   min-height: 40px;
   a {
     color: $gray-lighter;
@@ -257,8 +258,18 @@ aside {
 
 /* micropost content counter */
 
-#txt_cnt{
+#txt_cnt {
   display: block;
   width: 40px;
   background: white;
+}
+
+/* tables */
+
+.glyphicon {
+  margin: 0 0 0 0;
+}
+
+.glyphicon-empty {
+  margin: 0 0 0 0;
 }
