@@ -18,7 +18,7 @@ html {
 }
 
 body {
-  padding-top: 60px;
+  padding-top: 30px;
 }
 
 section {
@@ -64,34 +64,13 @@ p {
 }
 
 
-/* header */
+/* navbar */
 
-#logo {
-  float: left;
-  margin-right: 10px;
-  font-size: 1.7em;
-  color: white;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  padding-top: 9px;
-  font-weight: bold;
-  line-height: 1;
-  &:hover {
-    color: white;
-    text-decoration: none;
-  }
+.navbar {
+  background-color: #424f58;
+  border-color: #5fb3d5;
 }
 
-.navbar-left {
-  min-height: 40px;
-  a {
-    color: $gray-lighter;
-    &:hover {
-      color: $gray-darker;
-    }
-
-  }
-}
 
 /* footer */
 
