@@ -1,0 +1,42 @@
+<%= render 'shared/error_messages', object: f.object %>
+
+<div class="form-group">
+	<%= f.label :name %>
+	<%= f.text_field :name, class: "form-control" %>
+</div>
+
+<% if is_leaf %>
+	<div class="form-group">
+		<%= f.label :description %>
+		<%= f.text_field :description, class: "form-control" %>
+	</div>
+
+	<div class="form-group">
+		<%= f.label :measure %>
+		<%= f.text_field :measure, class: "form-control" %>
+	</div>
+
+	<div class="form-group">
+		<%= f.label :is_service %>
+		<%= f.check_box :is_service, class: "form-control, checkbox" %>
+	</div>
+
+	<div class="form-group">
+		<%= f.label :purchase_price %>
+		<%= f.number_field :purchase_price, step: 0.01, class: "form-control" %>
+	</div>
+
+	<div class="form-group">
+		<%= f.label :cash_price %>
+		<%= f.number_field :cash_price, step: 0.01, class: "form-control" %>
+	</div>
+
+	<div class="form-group">
+		<%= f.label :noncash_price %>
+		<%= f.number_field :noncash_price, step: 0.01, class: "form-control" %>
+	</div>
+
+	<%= f.hidden_field :is_leaf%>
+	<%= f.hidden_field :group_id%>
+
+<% end %>

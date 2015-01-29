@@ -1,0 +1,10 @@
+<% provide(:title, "New #{ @product.is_leaf ? 'product' : 'group' }") %>
+
+<div class="row">
+  	<div class="col-md-4 col-xs-6">
+  		<%= form_for @product, html: { role: "form" } do |f| %>
+			<%= render 'fields', f: f, is_leaf: @product.is_leaf %>
+  			<%= f.submit "Update", class: "btn btn-primary btn-md" %>
+		<% end %>
+  	</div>
+</div>

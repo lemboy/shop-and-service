@@ -8,7 +8,12 @@
       <th class="text-right" width="10%" >Purchase</th>
       <th class="text-right" width="10%" >Cash</th>
       <th class="text-right" width="10%" >Non-cash</th>
-      <th width="10%"></th>
+      <th class="text-right" width="15%">
+      	<%= link_to "Add item", new_product_path+"?is_leaf=true&grp_id=#{params[:grp_id]}",
+                                			class: "btn btn-sm btn-primary" %>
+      	<%= link_to "Add group", new_product_path+"?is_leaf=false&grp_id=#{params[:grp_id]}",
+                                			class: "btn btn-sm btn-primary" %>
+      </th>
     </tr>
   </thead>
   <tbody>	
