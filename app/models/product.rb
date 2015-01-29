@@ -7,7 +7,7 @@ class Product < ActiveRecord::Base
   before_destroy :check_for_relations
   
   def check_for_relations
-    unless Product.exists?(group_id: id) 
+    if Product.exists?(group_id: id) 
       return false
     end
   end

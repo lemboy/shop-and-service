@@ -40,6 +40,12 @@ class ProductsController < ApplicationController
     end
   end
   
+  def destroy
+    grp_id = Product.find(params[:id]).group_id
+    Product.find(params[:id]).destroy
+    redirect_to products_path+"?grp_id=#{grp_id}"
+  end
+  
   private
 
     def product_params
