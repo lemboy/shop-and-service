@@ -1,5 +1,5 @@
 <tr>
-  <td><%= product_glyph(product).html_safe %></td>
+  <td><%= product.is_leaf ? check_box_tag(product.id) : raw('<span class="glyphicon glyphicon-folder-close"></span>') %> </td>
   <td>
 	<% link_string = product.is_leaf ? product : products_path + "?grp_id=#{product.id}" %>
   	<%= link_to product.name, link_string %>

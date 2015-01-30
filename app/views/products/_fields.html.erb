@@ -5,6 +5,9 @@
 	<%= f.text_field :name, class: "form-control" %>
 </div>
 
+<%= f.hidden_field :is_leaf%>
+<%= f.hidden_field :group_id%>
+
 <% if is_leaf %>
 	<div class="form-group">
 		<%= f.label :description %>
@@ -36,6 +39,4 @@
 		<%= f.number_field :noncash_price, step: 0.01, class: "form-control" %>
 	</div>
 
-	<%= f.hidden_field :is_leaf%>
-	<%= f.hidden_field :group_id%>
 <% end %>
