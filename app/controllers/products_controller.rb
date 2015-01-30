@@ -41,8 +41,13 @@ class ProductsController < ApplicationController
   end
   
   def destroy
-    grp_id = Product.find(params[:id]).group_id
-    Product.find(params[:id]).destroy
+    @product = Product.find(params[:id])
+    grp_id = @product.group_id
+    @product.destroy
+    flash[:success] = "Deleted." if @product.destroyed?
+    if @product.errors.any?
+      flash[:danger] = "#{@product.name} - #{@product.errors.get(:base)[0]}"
+    end
     redirect_to products_path+"?grp_id=#{grp_id}"
   end
   
