@@ -11,6 +11,10 @@
 // about supported directives.
 //
 //= require jquery
+//
+// Add "jquery.turbolinks" for fix jquery-turbolink bug
+//
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require bootstrap
 //= require turbolinks

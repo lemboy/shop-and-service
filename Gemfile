@@ -15,6 +15,9 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 
+# Add "jquery-turbolinks" for fix jquery-turbolink bug
+gem 'jquery-turbolinks'
+
 group :development, :test do
  gem 'rspec-rails', '~> 3.0'
 
