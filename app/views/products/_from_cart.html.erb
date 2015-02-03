@@ -1,0 +1,8 @@
+<%= form_for(@product.carts.find_by(product_id: @product),
+             html: { method: :delete },
+             remote: true) do |f| %>
+  <div><%= f.hidden_field :id %></div>
+  <%= button_tag(type: 'submit', class: "btn btn-xxs btn-default") do %>
+    <span class="glyphicon glyphicon-ok"></span> 
+  <% end %>
+<% end %>

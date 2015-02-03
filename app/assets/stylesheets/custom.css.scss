@@ -253,3 +253,22 @@ aside {
 .glyphicon-empty {
   margin: 0 0 0 0;
 }
+
+.glyphicon-none:before {
+    content: "\2122";
+    color: transparent !important;
+    font-size: 1em;
+}
+
+span.glyphicon-ok {
+    font-size: 1em;
+}
+
+.btn-xxs {
+    padding: 3px 4px;
+    font-size: 8px;
+    line-height: normal;
+    -webkit-border-radius: 4px;
+       -moz-border-radius: 4px;
+            border-radius: 4px;
+    }

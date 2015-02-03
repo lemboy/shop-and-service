@@ -1,0 +1,7 @@
+<%= form_for(@product.carts.build(id: @product.id),
+             remote: true) do |f| %>
+  <div><%= f.hidden_field :id %></div>
+  <%= button_tag(type: 'submit', class: "btn btn-xxs btn-default") do %>
+    <span class="glyphicon glyphicon-none"></span> 
+  <% end %>
+<% end %>

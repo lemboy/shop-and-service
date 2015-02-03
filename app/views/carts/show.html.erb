@@ -1,0 +1,13 @@
+<% provide(:title, 'Default Cart') %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Count</th>
+    </tr>
+  </thead>
+  <tbody>	
+	<%= render partial: "cart_items", collection: @cart_items %>
+  </tbody>
+</table>

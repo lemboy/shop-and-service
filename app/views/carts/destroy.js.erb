@@ -1,0 +1,2 @@
+$(<%= "cart_form_#{@product.id.to_s}" %>).html("<%= escape_javascript(render('products/to_cart', :product => @product)) %>")
+$("#product_count").html('<%= cart_count? %>')

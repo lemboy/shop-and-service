@@ -9,4 +9,9 @@ FactoryGirl.define do
     end
 
   end
+  
+  factory :cart do
+    product_count = 11
+    product
+  end
 end

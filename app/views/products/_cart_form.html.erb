@@ -1,0 +1,7 @@
+<div id= <%= "cart_form_#{@product.id}" %> >
+<% if @product.in_cart? %>
+  <%= render 'from_cart' %>
+<% else %>
+  <%= render 'to_cart' %>
+<% end %>
+</div>
