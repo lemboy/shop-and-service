@@ -1,0 +1,14 @@
+<div>
+  <%= form_for @cart_items.find_by(id: item_id), html: { role: "form" }, remote: true do |f| %>
+  
+    <%= content_tag :div, id: "cart_count_#{item_id}" do %>
+	  <%= f.text_field :product_count, maxlength: 3, class: "form-control submit_on_enter input-sm" %>
+    <% end %>
+
+    <%= content_tag :div, nil, id: "cart_count_err_#{item_id}", class: "small_error_message" %>
+
+  	<div><%= f.hidden_field :id %></div>
+
+  	<%= button_tag(type: 'submit', :style => "display: none") %>
+  <% end %>
+</div>

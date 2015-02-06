@@ -25,11 +25,11 @@ class Product < ActiveRecord::Base
   def from_cart!
     if Cart.exists?(product_id: id)
       prod_cnt = Cart.find_by_product_id(id).product_count 
-      if prod_cnt == 1
+#      if prod_cnt == 1
         Cart.find_by(product_id: id).destroy!
-      else
-        Cart.find_by_product_id(id).update(product_count: prod_cnt - 1)
-      end
+#      else
+#        Cart.find_by_product_id(id).update(product_count: prod_cnt - 1)
+#      end
     end  
   end  
 

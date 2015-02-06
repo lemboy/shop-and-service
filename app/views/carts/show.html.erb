@@ -2,10 +2,7 @@
 
 <table class="table">
   <thead>
-    <tr>
-      <th>Name</th>
-      <th>Count</th>
-    </tr>
+	<%= render partial: "shared/grid_header", locals: { columns: [:name, :count] }  %>
   </thead>
   <tbody>	
 	<%= render partial: "cart_items", collection: @cart_items %>

@@ -2,22 +2,13 @@
 
 <table class="table">
   <thead>
-    <tr>
-      <th width="37px"><span class="badge" id="product_count"><%= cart_count? %></span></th>
-      <th>Name</th>
-      <th class="text-right" width="10%" >Purchase</th>
-      <th class="text-right" width="10%" >Cash</th>
-      <th class="text-right" width="10%" >Non-cash</th>
-      <th class="text-right" width="15%">
-      	<%= link_to "Add item", new_product_path+"?is_leaf=true&grp_id=#{params[:grp_id]}",
-                                			class: "btn btn-sm btn-primary" %>
-      	<%= link_to "Add group", new_product_path+"?is_leaf=false&grp_id=#{params[:grp_id]}",
-                                			class: "btn btn-sm btn-primary" %>
-      </th>
-    </tr>
+	<%= render partial: "shared/grid_header", locals: { columns: [:product_glyph, :name, :purchase_price, 
+									:cash_price, :noncash_price, :buttons], 
+									params: ['products', params[:grp_id]] }  %>
   </thead>
   <tbody>	
-	<%= render partial: "product_parents", collection: @product_parents  %>
+	<%= render partial: "shared/grid_parents_row", collection: @product_parents , as: :item,
+									locals: { path: products_path, skip_columns: 4 } %>
 	<%= render @products %>
   </tbody>
 </table>

@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   
   include ProductsHelper
   include CartsHelper
+  include ApplicationFrontHelper
   
   protect_from_forgery with: :exception
 end

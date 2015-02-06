@@ -8,9 +8,9 @@
 	<% link_string = product.is_leaf ? product : products_path + "?grp_id=#{product.id}" %>
   	<%= link_to product.name, link_string %>
   </td>
-  <td class="text-right" ><%= formatted_price product.purchase_price, product.is_leaf %></td>
-  <td class="text-right" ><%= formatted_price product.cash_price, product.is_leaf %></td>
-  <td class="text-right" ><%= formatted_price product.noncash_price, product.is_leaf %></td>
+  <td class="text-right" ><%= formatted_money product.purchase_price, product.is_leaf %></td>
+  <td class="text-right" ><%= formatted_money product.cash_price, product.is_leaf %></td>
+  <td class="text-right" ><%= formatted_money product.noncash_price, product.is_leaf %></td>
   <td class="text-right" >
   	<%= link_to edit_product_path(product) do %>
     	<span class="glyphicon glyphicon-pencil"></span>

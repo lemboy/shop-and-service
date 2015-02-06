@@ -1,0 +1,12 @@
+$("#flash_messages").html("<%= escape_javascript(render(
+		:partial => 'layouts/flash_messages', :locals => {:flash => flash})) %>")
+
+<% if flash.any? %>
+  $( "<%= "#cart_count_#{@cart.id}" %>" ).addClass( "field_with_errors" )
+  $( "<%#= "#cart_count_err_#{@cart.id}" %>" ).html( "<%#= flash[:danger] %>" )
+  <% flash.clear %>
+<% else %>
+  $( "<%= "#cart_count_#{@cart.id}" %>" ).removeClass( "field_with_errors" )	
+  $( "<%= "#cart_count_#{@cart.id}" %>" ).addClass( "has-success" )
+  $( "<%#= "#cart_count_err_#{@cart.id}" %>" ).html("<%#= "" %>")
+<% end %>

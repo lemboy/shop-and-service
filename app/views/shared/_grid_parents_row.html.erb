@@ -1,0 +1,8 @@
+<tr>
+  <td><span class="glyphicon glyphicon-folder-open"></span></td>
+  <td><strong>
+  		<%= link_to " .. / #{item.name}", path + 
+  					( !item.group_id.nil? ? "?grp_id=#{item.group_id}" : "" ) %>
+  </strong></td>
+  <%= ('<td></td>'*skip_columns).html_safe %>
+</tr>
