@@ -29,7 +29,7 @@ class CartsController < ApplicationController
     @cart = Cart.find(params[:id])
     @cart.update_attributes(cart_params)
     if @cart.errors.any?
-      flash[:danger] = @cart.errors.full_messages.first
+      flash[:danger] = @cart.errors.full_messages.join(" ")
     end
     respond_to do |format|
       format.html { redirect_to @cart }

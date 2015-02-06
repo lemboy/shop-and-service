@@ -46,7 +46,8 @@ class ProductsController < ApplicationController
     @product.destroy
     flash[:success] = "Deleted." if @product.destroyed?
     if @product.errors.any?
-      flash[:danger] = "#{@product.name} - #{@product.errors.get(:base)[0]}"
+#      flash[:danger] = "#{@product.name} - #{@product.errors.get(:base)[0]}"
+      flash[:danger] = "#{@product.name} - #{@product.errors.full_messages.join(' ')}"
     end
     redirect_to products_path+"?grp_id=#{grp_id}"
   end
