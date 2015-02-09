@@ -1,0 +1,13 @@
+<% provide(:title, 'Customers list') %>
+
+<table class="table">
+  <thead>
+	<%= render partial: "shared/grid_header", locals: { columns: [:none, :name, :buttons], 
+									params: ['customers', params[:grp_id]] }  %>
+  </thead>
+  <tbody>	
+	<%= render partial: "shared/grid_parents_row", collection: @customer_parents , as: :item,
+									locals: { path: customers_path, skip_columns: 0 } %>
+	<%= render @customers %>
+  </tbody>
+</table>

@@ -1,0 +1,26 @@
+<%= render 'shared/error_messages', object: f.object %>
+
+<div class="form-group">
+	<%= f.label :name %>
+	<%= f.text_field :name, class: "form-control" %>
+</div>
+
+<%= f.hidden_field :is_leaf %>
+<%= f.hidden_field :group_id %>
+
+<% if is_leaf %>
+	<div class="form-group">
+		<%= f.label :print_name %>
+		<%= f.text_field :print_name, class: "form-control" %>
+	</div>
+
+	<div class="form-group">
+		<%= f.label :contact_person %>
+		<%= f.text_field :contact_person, class: "form-control" %>
+	</div>
+
+	<div class="form-group">
+		<%= f.label :contact_phone %>
+		<%= f.text_field :contact_phone, class: "form-control" %>
+	</div>
+<% end %>

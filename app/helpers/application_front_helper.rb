@@ -16,7 +16,7 @@ module ApplicationFrontHelper
     retval = ''
     case column
       when :none
-        retval = '<th></th>'
+        retval = "<th width='37px'></th>"
       when :product_glyph
         retval = "<th width='37px'><span class='badge' id='product_count'>#{cart_count?}</span></th>"
       when :name

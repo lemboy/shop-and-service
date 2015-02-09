@@ -1,0 +1,20 @@
+<% @customer = Customer.find(customer.id)%>
+<tr>
+  <td>
+  	<%= customer.is_leaf ? raw('<span class="glyphicon glyphicon-empty"></span>') :
+		 raw('<span class="glyphicon glyphicon-folder-close"></span>') %> 
+  </td>
+  <td>
+	<% link_string = customer.is_leaf ? customer : customers_path + "?grp_id=#{customer.id}" %>
+  	<%= link_to customer.name, link_string %>
+  </td>
+  <td class="text-right" >
+  	<%= link_to edit_customer_path(customer) do %>
+    	<span class="glyphicon glyphicon-pencil"></span>
+	<% end %>
+	<%= link_to customer, method: :delete, data: { confirm: "You sure?" } do %>
+    	<span class="glyphicon glyphicon-trash"></span>
+	<% end %>
+  </td>
+</tr>
+    

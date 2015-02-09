@@ -7,6 +7,6 @@ describe "Static pages" do
   describe "Home page" do
     before { visit root_path }
     
-    it { should have_title('Shop and Service') }
+    it { should have_title('S&S') }
   end
 end
